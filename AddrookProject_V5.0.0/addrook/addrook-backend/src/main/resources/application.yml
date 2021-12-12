@@ -1,0 +1,4 @@
+########## 配置所加载的配置文件信息
+spring:
+  profiles:
+    active: dev

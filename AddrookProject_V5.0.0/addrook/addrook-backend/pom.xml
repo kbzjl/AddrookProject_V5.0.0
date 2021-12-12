@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.test.addrook</groupId>
+  <artifactId>addrook-backend</artifactId>
+  <version>5.0.0</version>
+  <!--配置项目打包方式为jar包 -->
+  <packaging>jar</packaging>
+  <!--配置Spring Boot starter parent 作为项目父类依赖[BEGIN]-->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.12.RELEASE</version>
+  </parent>
+  <!--配置Spring Boot starter parent 作为项目父类依赖[END]-->
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
+    <mybatis-plus-boot-starter.version>3.4.3.4</mybatis-plus-boot-starter.version>
+    <pagehelper-spring-boot-starter.version>1.4.1</pagehelper-spring-boot-starter.version>
+    <druid-spring-boot-starter.version>1.2.8</druid-spring-boot-starter.version>
+    <spring-boot-starter-data-redis.version>2.6.1</spring-boot-starter-data-redis.version>
+    <hutool-all.version>5.7.16</hutool-all.version>
+    <mapstruct.version>1.4.2.Final</mapstruct.version>
+    <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
+  </properties>
+
+  <dependencies>
+    <!--配置Spring Boot starter web依赖[BEGIN]-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!--配置Spring Boot starter web依赖[END]-->
+
+    <!--配置mysql Connector/J 依赖[BEGIN]-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <!--配置mysql Connector/J  依赖[END]-->
+
+    <!--配置myBatis Spring Boot starter 依赖[BEGIN]-->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>${mybatis-spring-boot-starter.version}</version>
+    </dependency>
+    <!--配置myBatis Spring Boot starter 依赖[END]-->
+
+    <!--配置myBatis Plus 依赖[BEGIN]-->
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>${mybatis-plus-boot-starter.version}</version>
+    </dependency>
+    <!--配置myBatis Plus 依赖[END]-->
+
+    <!--配置pagehelper-spring-boot-starter 分页查询 依赖[BEGIN]-->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper-spring-boot-starter</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <!--配置pagehelper-spring-boot-starter 分页查询 依赖[END]-->
+
+    <!--配置druid /jdbc 分页查询 依赖[BEGIN]-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>${druid-spring-boot-starter.version}</version>
+    </dependency>
+    <!--配置druid /jdbc 分页查询 依赖[END]-->
+
+    <!--配置redis 分页查询 依赖[BEGIN]-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+      <version>${spring-boot-starter-data-redis.version}</version>
+    </dependency>
+    <!--配置redis 分页查询 依赖[END]-->
+
+    <!--配置hutool 依赖[BEGIN]-->
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+      <version>${hutool-all.version}</version>
+    </dependency>
+    <!--配置hutool 依赖[END]-->
+
+    <!--配置mapstruct core 依赖 实体转vo [BEGIN]-->
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${mapstruct.version}</version>
+    </dependency>
+    <!--跟注释有关的注解-->
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct-processor</artifactId>
+      <version>${mapstruct.version}</version>
+    </dependency>
+    <!--配置mapstruct core 依赖 实体转vo [END]-->
+
+    <!--配置springfox-boot-starter 依赖 生成API文档 [BEGIN]-->
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-boot-starter</artifactId>
+      <version>${springfox-boot-starter.version}</version>
+    </dependency>
+    <!--配置springfox-boot-starter 依赖 生成API文档 [END]-->
+
+    <!--配置spring-boot-Devtools  热重启 依赖 [BEGIN]-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+    </dependency>
+    <!--配置spring-boot-Devtools 热重启 依赖 [BEGIN]-->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>repackage</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
